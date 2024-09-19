@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+:root {
+  --main-font: "Kim jung chul Gothic", sans-serif;
+  --main-color: #001326;
+  --sub-color: #647793;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  color: #000;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* 헤더 */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  transition: all 0.2s;
+}
+
+#header.on {
+  background: #fff;
+}
+
+#header.on .gnb > li > a {
+  color: #000;
+}
+
+#header.active {
+  background: #fff;
+}
+
+#header.active .gnb > li > a {
+  color: var(--main-color);
+}
+
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#header nav {
+  margin-left: auto;
+  margin-right: 150px;
+}
+
+#header .gnb {
+  display: flex;
+  gap: 50px;
+}
+
+#header .gnb > li > a {
+  display: block;
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+#header .menu {
+  position: absolute;
+  right: 0;
+  align-items: center;
+  padding: 0 5%;
+}
+
+#header .menu .lang {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+#header .menu .lang .eng a {
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#header .menu .lang .kor a {
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  background: #fff;
+  color: #000;
+}
+
+#header.on .menu .lang .eng a {
+  padding: 5px 10px;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+#header.on .menu .lang .kor a {
+  border: 2px solid #000000;
+  padding: 5px 10px;
+  background: #000000;
+  color: #ffffff;
+}
+
+#header .gnb > li::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 auto;
+  background: var(--main-color);
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+#header .gnb > li:hover::before {
+  opacity: 1;
+}
+
+/* depth2 영역 */
+
+#header .gnb > li .depth2 {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+}
+
+#header .gnb > li .depth2 li a {
+  display: block;
+  padding-top: 45px;
+  padding-right: 15px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+#header .depth2_bg {
+  position: absolute;
+  left: 0;
+  top: 88px;
+  width: 100%;
+  height: 60px;
+  background: var(--main-color);
+}
+
+/* 푸터 */
+#footer {
+  background: var(--main-color);
+  padding: 10px 0;
+}
+#footer hr {
+  margin-bottom: 20px;
+}
+
+#footer .footer_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .footer_top .link_list {
+  display: flex;
+  gap: 32px;
+  padding: 20px 0;
+}
+
+#footer .footer_top .link_list a {
+  color: #fff;
+  font-size: 1.5;
+  font-weight: 600;
+}
+
+#footer .footer_top .footer_lang {
+  padding: 30px 0;
+}
+
+#footer .footer_logo {
+  padding-bottom: 15px;
+}
+
+#footer .footer_addr {
+  line-height: 2;
+}
+
+#footer .footer_addr p {
+  font-size: 1.5rem;
+  color: #c7c7c7;
+}
+
+#footer .footer_addr address {
+  color: #c7c7c7;
+}
+
+#footer .footer_addr span {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#footer .inner {
+  position: relative;
+}
+
+#footer .sns_link {
+  position: absolute;
+  right: 76px;
+  bottom: 16px;
+}
+
+#footer .sns_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#footer select {
+  background: var(--sub-color) url(../img/common/select.png) no-repeat right
+    15px center;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  width: 70px;
+  height: 45px;
+  font-family: var(--main-font);
+  padding: 0 10px;
+  appearance: none;
+  margin-top: 5px;
+}
